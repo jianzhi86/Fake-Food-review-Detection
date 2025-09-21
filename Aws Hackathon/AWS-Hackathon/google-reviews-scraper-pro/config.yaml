@@ -1,0 +1,44 @@
+# --- S3 Upload Configuration ---
+use_s3: true
+s3:
+  # From your screenshot in our previous conversation
+  bucket_name: "fake-food-review"
+  region_name: "ap-southeast-1"
+
+  # Recommended optional settings
+  prefix: "google-maps-images/"      # Creates a "folder" in your bucket for organization
+  delete_local_after_upload: true   # Cleans up local images after successful upload
+
+  # --- MODIFICATION START ---
+  # Your credentials are now stored here by default.
+  # Replace the placeholder text with your actual keys.
+  # aws_access_key_id: ""
+  # aws_secret_access_key: ""
+  # --- MODIFICATION END ---
+
+# --- Original Configuration ---
+backup_to_json: true
+convert_dates: true
+custom_params:
+  source: Google Maps
+custom_url_base: https://mycustomurl.com
+custom_url_profiles: /profiles/
+custom_url_reviews: /reviews/
+download_images: true
+download_threads: 4
+headless: true
+image_dir: review_images
+json_path: google_reviews.json
+mongodb:
+  collection: google_reviews
+  database: reviews
+  uri: mongodb://localhost:27017
+overwrite_existing: true
+preserve_original_urls: true
+replace_urls: false
+seen_ids_path: google_reviews.ids
+sort_by: relevance
+stop_on_match: false
+store_local_paths: true
+url: https://maps.app.goo.gl/6tkNMDjcj3SS6LJe9
+use_mongodb: true

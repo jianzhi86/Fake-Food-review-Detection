@@ -1,0 +1,298 @@
+/* --- General Body Styles (Warm & Inviting) --- */
+body {
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif; /* Poppins as primary */
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for longer content */
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem 0; /* Add padding for scroll */
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- Background Image Container (Restaurant Vibe) --- */
+.background-image-container {
+    position: fixed; /* Fixed so it doesn't scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Images/HomeBackgroun2.png'); /* Make sure you have an image at this path */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: blur(5px); /* Slightly more blur */
+    transform: scale(1.05);
+}
+
+/* --- Main Content Container (Clean & Readable) --- */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2.5rem;
+    border-radius: 16px; /* Slightly larger radius */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+    z-index: 1;
+    border: 1px solid rgba(220, 220, 220, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem; /* Slightly adjusted for balance */
+    font-weight: 700;
+    color: #ff7f50; /* Coral */
+    text-shadow: 0 0 10px rgba(255, 127, 80, 0.5);
+    margin-bottom: 0.5rem;
+    animation: pulseGlow 2.5s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from { text-shadow: 0 0 8px rgba(255, 127, 80, 0.5); }
+    to { text-shadow: 0 0 16px rgba(255, 127, 80, 0.8), 0 0 25px rgba(255, 127, 80, 0.3); }
+}
+
+h2 {
+    color: #444;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* --- Task Block & Input Field Styling --- */
+.task-block {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.task-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.task-input-group input {
+    flex-grow: 1; /* Allows input to take up available space */
+    padding: 0.9rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.task-input-group input:focus {
+    outline: none;
+    border-color: #ff9900;
+    box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.3);
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px; /* Space between buttons */
+}
+
+/* --- General Button Styles --- */
+button {
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.2s ease;
+    white-space: nowrap; /* Prevents button text from wrapping */
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* --- Specific Button Styles --- */
+.detect-btn {
+    background-color: #ff9900;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 153, 0, 0.25);
+}
+.detect-btn:hover {
+    background-color: #e68a00;
+    box-shadow: 0 6px 15px rgba(255, 153, 0, 0.35);
+}
+.detect-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.remove-btn {
+    background-color: #fbebeb;
+    color: #e74c3c;
+    padding: 0.9rem; /* Make it squarer */
+    line-height: 1; /* Helps vertical centering of the icon */
+    font-size: 1.2rem;
+}
+.remove-btn:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* *** NEW *** */
+.remove-btn:disabled {
+    background-color: #f0f0f0;
+    color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+#addTaskBtn {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: 600;
+    width: 100%;
+    margin-top: -10px; /* Pull it closer to the task list */
+    margin-bottom: 40px;
+}
+#addTaskBtn:hover {
+    background-color: #dcedc8;
+}
+
+#addTaskBtn:disabled {
+    background-color: #f0f0f0;
+    color: #aaa;
+    border: 1px solid #ddd;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+
+/* --- Progress Bar Styles --- */
+.progress-container {
+    margin-top: 15px;
+    width: 100%;
+}
+.progress-bar-background {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 3px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+.progress-bar-foreground {
+    height: 16px;
+    background-color: #ff9900;
+    border-radius: 6px;
+    width: 0%;
+    transition: width 0.4s ease-out;
+}
+.progress-status {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+
+/* --- Past Results Table --- */
+#pastResultsContainer {
+    margin-top: 40px;
+    width: 100%;
+}
+.past-results-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+}
+.past-results-table th,
+.past-results-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+.past-results-table th {
+    background-color: #f9f9f9;
+    font-weight: 600;
+    color: #444;
+}
+.past-results-table tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+.past-results-table td.actions {
+    text-align: right;
+    white-space: nowrap;
+}
+.past-results-table .view-btn,
+.past-results-table .delete-btn {
+    padding: 7px 14px;
+    margin-left: 8px;
+    font-size: 0.9rem;
+}
+.past-results-table .view-btn {
+    background-color: #ff9900;
+    color: white;
+}
+.past-results-table .view-btn:hover {
+    background-color: #e68a00;
+}
+.past-results-table .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+.past-results-table .delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* --- MODAL STYLES --- */
+.modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-content {
+    background-color: #ffffff; margin: 5% auto; padding: 30px; border: 1px solid #888; width: 90%; max-width: 800px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; animation: fadeIn 0.4s;
+}
+.header-title {
+    text-align: center; font-size: 2rem; color: #ff9900; margin-bottom: 2rem;
+}
+.close-button {
+    color: #aaa; position: absolute; top: 15px; right: 25px; font-size: 35px; font-weight: bold;
+}
+.close-button:hover, .close-button:focus {
+    color: black; text-decoration: none; cursor: pointer;
+}
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+.review-card {
+    background-color: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin-bottom: 15px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s ease;
+}
+.review-card:hover { transform: translateY(-3px); }
+.review-header { display: flex; align-items: center; margin-bottom: 10px; }
+.profile-pic { width: 50px; height: 50px; border-radius: 50%; margin-right: 15px; border: 2px solid #ff9900; }
+.reviewer-info { display: flex; flex-direction: column; }
+.reviewer-name { font-weight: bold; color: #333; font-size: 1.1em; }
+.review-date { font-size: 0.9em; color: #888; }
+.review-rating { font-size: 1.2em; margin-bottom: 10px; }
+.review-description p { margin: 0; line-height: 1.5; color: #555; font-size: 1em; }
+.review-details { margin-top: 15px; font-size: 0.9em; color: #777; display: flex; justify-content: space-between; align-items: center; }

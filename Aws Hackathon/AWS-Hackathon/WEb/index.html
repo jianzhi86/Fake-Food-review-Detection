@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Fake Review Detector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-image-container"></div> 
+
+  <div class="container">
+    <h1>Fake Food Review Detector 🕵️‍♀️</h1>
+    <p>Enter Google Maps restaurant URLs to check for suspicious reviews!</p>
+
+    <div id="taskList"></div>
+
+    <button id="addTaskBtn">+ Add Another</button>
+
+    <div id="pastResultsContainer">
+      <h2>Past Results</h2>
+      <div id="pastResultsList">
+        <p>Loading past results...</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="resultsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">×</span>
+      <h1 class="header-title">Reviews for <span id="companyName"></span></h1>
+      <div id="modalResults"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
